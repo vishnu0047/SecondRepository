@@ -173,6 +173,19 @@ public class Practice {
 		System.out.println(request.statusCode());
 		System.out.println(request.getBody().asPrettyString());	
 	}
+	
+	@Test
+	public void tc14() {
+		System.out.println("tc3");
+		RestAssured.baseURI = "https://reqres.in/";
+		RequestSpecification rs = RestAssured.given();
+		rs.pathParam("id", "23");
+		Response request = rs.request(Method.GET,"api/users/{id}");
+		System.out.println(request.statusCode());
+		System.out.println(request.getBody().asPrettyString());	
+	}
+	
+	
 		
 		
 		
